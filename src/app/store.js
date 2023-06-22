@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import projectsReducer from './projects/projectsSlice';
+import portfolioReducer from './projects/portfolioSlice';
 
 const store = configureStore({
   reducer: {
-    projects: projectsReducer,
+    portfolio: portfolioReducer,
   },
 });
 
