@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   resume: {
-    url: 'https://driv',
+    url: 'https://docs.google.com/document/d/1_b8rqKedzVgeIRQXSMBEcT_eb8VqTDYjDUdY_3CO2jE/edit?usp=sharing',
     title: 'Resume_Vazquez_Flores_Jose_L.pdf',
   },
   projects: [

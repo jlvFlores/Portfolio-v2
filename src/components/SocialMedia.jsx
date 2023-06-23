@@ -2,8 +2,8 @@ import React from 'react';
 
 const SocialMedias = () => (
   <div className="media">
-    <a href="https://github.com/jlvFlores">Discord</a>
-    <a href="https://www.linkedin.com/in/jose-luis-vazquez/">LinkedIn</a>
+    <a className="media-link" href="https://github.com/jlvFlores">Github</a>
+    <a className="media-link" href="https://www.linkedin.com/in/jose-luis-vazquez/">LinkedIn</a>
   </div>
 );
 

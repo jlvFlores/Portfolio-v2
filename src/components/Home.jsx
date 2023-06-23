@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
 import Attributes from './Attributes';
@@ -8,6 +8,25 @@ const Home = () => {
   const {
     projects, resume, attributes, texts,
   } = useSelector((store) => store.portfolio);
+
+  const findAllAnimations = () => {
+    const hiddenElements = document.querySelectorAll('.hidden');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        } else {
+          entry.target.classList.remove('animate');
+        }
+      });
+    });
+    hiddenElements.forEach((element) => observer.observe(element));
+  };
+
+  useEffect(() => {
+    findAllAnimations();
+  }, []);
+
   return (
     <main>
       <section id="headline">
@@ -24,9 +43,9 @@ const Home = () => {
           <SocialMedia />
         </div>
       </section>
-      <section id="portfolio">
-        <h4 className="center">Portfolio</h4>
-        <div className="projects">
+      <section id="projects" className="divider-top">
+        <h4 className="center">Projects</h4>
+        <div className="projects-showcase">
           {projects.map((project) => (
             <Card
               key={project.id}
@@ -42,11 +61,11 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section id="about">
+      <section id="about" className="divider-bottom">
         <div className="section-content">
           <h4 className="center">About me</h4>
           <p className="justify long-text">{texts.about}</p>
-          <a className="resume btn" href={resume.url} download={resume.title}>Check my Resume</a>
+          <a className="resume btn" href={resume.url} target="_blank" rel="noreferrer noopener">Check my Resume</a>
           <div id="attributes">
             {attributes.map((attribute) => (
               <Attributes
@@ -58,8 +77,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section id="contact">
-        <div className='section-content'>
+      <section id="contact" className="divider-top">
+        <div className="section-content">
           <h4 className="center">Contact</h4>
           <p className="center long-text">{texts.contact}</p>
           <form action="">
@@ -68,10 +87,10 @@ const Home = () => {
               <input type="text" placeholder="Email" />
             </div>
             <textarea cols="45" rows="10" placeholder="Let me know how I can help you." />
-            <button className='btn reversed' type="submit">Get in touch</button>
+            <button className="btn reversed" type="submit">Get in touch</button>
           </form>
           <div className="center">
-            <SocialMedia/>
+            <SocialMedia />
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
+
 /* Global styles */
 * {
   margin: 0;
@@ -16,11 +17,25 @@ body {
   padding: 0;
 }
 
-section:not(#portfolio) {
+section:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
+
+section:not(#projects) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  font-size: 4rem;
+  padding-top: 5rem;
 }
 
 ul {
@@ -31,7 +46,7 @@ a {
   text-decoration: none;
 }
 
-.media > a{
+.media-link {
   margin: 1rem 1rem 1rem 0;
 }
 
@@ -53,6 +68,13 @@ ul {
   margin: 0;
 }
 
+.logo {
+  font-size: 2rem;
+  margin-left: 2rem;
+  color: white;
+  font-weight: 400;
+}
+
 .navbar {
   margin-right: 2rem;
 }
@@ -67,7 +89,12 @@ header > a {
   position: relative;
 }
 
-.nav-option::after {
+h5 {
+  font-size: 2rem;
+}
+
+.nav-option::after,
+.overlay-content::after {
   background: white;
   content: '';
   position: absolute;
@@ -80,20 +107,10 @@ header > a {
   transition: transform 0.25s ease-out;
 }
 
-.nav-option:hover::after {
+.nav-option:hover::after,
+.overlay-content:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-
-/* Main */
-section:nth-child(odd) {
-  background-color: white;
-  color: black;
-}
-
-h4 {
-  font-size: 4rem;
-  padding-top: 1rem;
 }
 
 /* Headline  */
@@ -101,8 +118,8 @@ h1 {
   font-size: 2rem;
 }
 
-/* Portfolio */
-.projects {
+/* Projects */
+.projects-showcase {
   display: grid;
   grid-template-areas:
     "other  main  main"
@@ -139,6 +156,7 @@ article:nth-child(4-6) {
 .project-img {
   width: 100%;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .overlay {
@@ -149,7 +167,7 @@ article:nth-child(4-6) {
 }
 
 .overlay-content {
-  bottom: 0.5rem;
+  bottom: 1rem;
   left: 1rem;
   position: absolute;
   transition: 0.5s;
@@ -157,11 +175,7 @@ article:nth-child(4-6) {
 }
 
 .overlay-content:hover {
-  transform: scale(1.1);
-}
-
-h5 {
-  font-size: 2rem;
+  transform: scale(1.05);
 }
 
 .tags {
@@ -191,7 +205,7 @@ dialog {
 form {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 60vw;
   margin: auto;
 }
 
@@ -256,4 +270,80 @@ textarea {
 .reversed:hover {
   background-color: black;
   color: white;
+}
+
+.divider-top {
+  background-repeat: no-repeat;
+  background-image: url('./assets/layered-waves-haikei1.svg');
+  background-size: 150%;
+}
+
+.divider-bottom {
+  background-repeat: no-repeat;
+  background-image: url('./assets/layered-waves-haikei2.svg');
+  background-size: 550%;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: all 1s;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate:nth-child(2) {
+  transition-delay: 300ms;
+}
+
+.animate:nth-child(3) {
+  transition-delay: 600ms;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .navbar > li {
+    display: flex;
+  }
+
+  .navbar img {
+    margin-left: 0.5rem;
+  }
+
+  .nav-option {
+    margin: 0 0.5rem;
+  }
+
+  .section-content {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #attributes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .attribute {
+    margin: 1rem 0;
+  }
+
+  .form-inputs {
+    flex-direction: column;
+  }
 }

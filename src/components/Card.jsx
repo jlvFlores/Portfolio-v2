@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const Card = ({
   id, title, techs, image, imageAltText, description, liveUrl, sourceUrl,
 }) => {
-  const openModal = () => {
-    const dialog = document.getElementById(`dialog-${id}`);
-    dialog.showModal();
+  const addListener = () => {
+    const overlayContent = document.getElementById(`overlay-content-${id}`);
+    overlayContent.addEventListener('click', () => {
+      const dialog = document.getElementById(`dialog-${id}`);
+      dialog.showModal();
+    });
   };
+
+  useEffect(() => {
+    addListener();
+  }, []);
 
   return (
     <>
       <article>
         <div className="overlay">
-          <div className="overlay-content" onClick={openModal}>
+          <div id={`overlay-content-${id}`} className="overlay-content">
             <ul>
               {techs.map((tech) => (
                 <li className="tags" key={tech}>{tech}</li>
