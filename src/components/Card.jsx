@@ -5,19 +5,26 @@ const Card = ({
   id, title, techs, image, imageAltText, description, liveUrl, sourceUrl,
 }) => {
   const openModal = () => {
-    const dialog = document.getElementById(id);
+    const dialog = document.getElementById(`dialog-${id}`);
     dialog.showModal();
   };
 
   return (
-    <article>
-      {techs.map((tech) => (
-        <span key={tech}>{tech}</span>
-      ))}
-      <p>{title}</p>
-      <img src={image} alt={imageAltText} />
-      <button type="button" onClick={openModal}>See More...</button>
-      <dialog id={id}>
+    <>
+      <article>
+        <div className="overlay">
+          <div className="overlay-content" onClick={openModal}>
+            <ul>
+              {techs.map((tech) => (
+                <li className="tags" key={tech}>{tech}</li>
+              ))}
+            </ul>
+            <h5>{title}</h5>
+          </div>
+        </div>
+        <img className="project-img" src={image} alt={imageAltText} />
+      </article>
+      <dialog id={`dialog-${id}`}>
         <form method="dialog">
           <button type="submit">Close</button>
         </form>
@@ -25,7 +32,7 @@ const Card = ({
         <a href={liveUrl}>Live project</a>
         <a href={sourceUrl}>Porject repository</a>
       </dialog>
-    </article>
+    </>
   );
 };
 
