@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <main>
       <section id="headline">
-        <div className="headline-content">
+        <div className="section-content">
           <h4>
             Hey there.
             <br />
@@ -43,28 +43,37 @@ const Home = () => {
         </div>
       </section>
       <section id="about">
-        <h4 className="center">About me</h4>
-        <p className="justify long-text">{texts.about}</p>
-        <a href={resume.url} download={resume.title}>Check my Resume</a>
-        <div id="attributes">
-          {attributes.map((attribute) => (
-            <Attributes
-              key={attribute.category}
-              category={attribute.category}
-              items={attribute.items}
-            />
-          ))}
+        <div className="section-content">
+          <h4 className="center">About me</h4>
+          <p className="justify long-text">{texts.about}</p>
+          <a className="resume btn" href={resume.url} download={resume.title}>Check my Resume</a>
+          <div id="attributes">
+            {attributes.map((attribute) => (
+              <Attributes
+                key={attribute.category}
+                category={attribute.category}
+                items={attribute.items}
+              />
+            ))}
+          </div>
         </div>
       </section>
       <section id="contact">
-        <p className="justify">{texts.contact}</p>
-        <form action="">
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Email" />
-          <textarea cols="45" rows="10" placeholder="Let me know how I can help you." />
-          <button type="submit">Get in touch</button>
-        </form>
-        <SocialMedia />
+        <div className='section-content'>
+          <h4 className="center">Contact</h4>
+          <p className="center long-text">{texts.contact}</p>
+          <form action="">
+            <div className="form-inputs">
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Email" />
+            </div>
+            <textarea cols="45" rows="10" placeholder="Let me know how I can help you." />
+            <button className='btn reversed' type="submit">Get in touch</button>
+          </form>
+          <div className="center">
+            <SocialMedia/>
+          </div>
+        </div>
       </section>
     </main>
   );

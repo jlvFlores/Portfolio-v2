@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
 /* Global styles */
 * {
   margin: 0;
@@ -5,12 +6,21 @@
 }
 
 :root {
-  color-scheme: light dark;
+  background-color: black;
+  color: white;
 }
 
 body {
+  font-family: 'Ysabeau SC', sans-serif;
   margin: 0;
   padding: 0;
+}
+
+section:not(#portfolio) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 
 ul {
@@ -19,6 +29,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.media > a{
+  margin: 1rem 1rem 1rem 0;
 }
 
 /* Header */
@@ -74,34 +88,20 @@ header > a {
 /* Main */
 section:nth-child(odd) {
   background-color: white;
-  color: #242424;
+  color: black;
 }
 
 h4 {
   font-size: 4rem;
+  padding-top: 1rem;
 }
 
 /* Headline  */
-#headline {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-}
-
-.headline-content {
-  margin: 0 1rem;
-}
-
 h1 {
   font-size: 2rem;
 }
 
 /* Portfolio */
-#portfolio {
-  padding-top: 1rem;
-}
-
 .projects {
   display: grid;
   grid-template-areas:
@@ -173,8 +173,50 @@ dialog {
   padding: 1rem;
 }
 
+/* About */
+#attributes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 2rem;
+}
+
+.attribute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+}
+
+.form-inputs {
+  display: flex;
+  column-gap: 1rem;
+}
+
+input {
+  flex: 1;
+}
+
+input,
+textarea {
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  min-height: 2rem;
+}
 
 /* Multi-use classes */
+.section-content {
+  margin: 0 2rem;
+}
+
 .center {
   text-align: center;
 }
@@ -185,5 +227,33 @@ dialog {
 
 .long-text {
   font-size: 1.25rem;
+  margin: 1rem 0 2rem;
+}
+
+.btn {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.25rem;
   margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.reversed {
+  background-color: white;
+  border: 2px solid white;
+  color: black;
+}
+
+.reversed:hover {
+  background-color: black;
+  color: white;
 }
