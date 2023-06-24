@@ -9,28 +9,37 @@ const Home = () => {
     projects, resume, attributes, texts,
   } = useSelector((store) => store.portfolio);
 
-  const findAllAnimations = () => {
-    const hiddenElements = document.querySelectorAll('.hidden');
+  const findAnimations = () => {
+    const animateElements = document.querySelectorAll('.animate');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+          entry.target.classList.add('animated');
         } else {
-          entry.target.classList.remove('animate');
+          entry.target.classList.remove('animated');
         }
       });
     });
-    hiddenElements.forEach((element) => observer.observe(element));
+    animateElements.forEach((element) => observer.observe(element));
+  };
+
+  const createEventListeners = () => {
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      contactForm.reset();
+    });
   };
 
   useEffect(() => {
-    findAllAnimations();
+    findAnimations();
+    createEventListeners();
   }, []);
 
   return (
     <main>
       <section id="headline">
-        <div className="section-content">
+        <div className="section-content animate">
           <h4>
             Hey there.
             <br />
@@ -45,7 +54,7 @@ const Home = () => {
       </section>
       <section id="projects" className="divider-top">
         <h4 className="center">Projects</h4>
-        <div className="projects-showcase">
+        <div className="projects-showcase animate">
           {projects.map((project) => (
             <Card
               key={project.id}
@@ -62,7 +71,7 @@ const Home = () => {
         </div>
       </section>
       <section id="about" className="divider-bottom">
-        <div className="section-content">
+        <div className="section-content animate">
           <h4 className="center">About me</h4>
           <p className="justify long-text">{texts.about}</p>
           <a className="resume btn" href={resume.url} target="_blank" rel="noreferrer noopener">Check my Resume</a>
@@ -78,15 +87,15 @@ const Home = () => {
         </div>
       </section>
       <section id="contact" className="divider-top">
-        <div className="section-content">
-          <h4 className="center">Contact</h4>
+        <div className="section-content animate">
+          <h4 id="contact-title" className="center">Contact</h4>
           <p className="center long-text">{texts.contact}</p>
-          <form action="">
+          <form id="contact-form">
             <div className="form-inputs">
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Name" required />
+              <input type="text" placeholder="Email" required />
             </div>
-            <textarea cols="45" rows="10" placeholder="Let me know how I can help you." />
+            <textarea cols="45" rows="10" placeholder="Let me know how I can help you." required />
             <button className="btn reversed" type="submit">Get in touch</button>
           </form>
           <div className="center">
