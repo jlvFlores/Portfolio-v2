@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Card from './Card';
-import Attributes from './Attributes';
 import SocialMedia from './SocialMedia';
+import Attributes from './Attributes';
+import Card from './Card';
 
 const Home = () => {
-  const {
-    projects, resume, attributes, texts,
-  } = useSelector((store) => store.portfolio);
+  const { projects, resume, attributes, texts } = useSelector((store) => store.portfolio);
 
   const findAnimations = () => {
     const animateElements = document.querySelectorAll('.animate');

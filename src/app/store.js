@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import portfolioReducer from './projects/portfolioSlice';
+import portfolioReducer from './portfolio/portfolioSlice';
 
 const store = configureStore({
   reducer: {
