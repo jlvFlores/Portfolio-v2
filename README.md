@@ -3,7 +3,7 @@
 <div align="center">
 
 # Portfolio-v2
-<b>My new porfolio</b>
+<b>My new and improved porfolio</b>
 
 </div>
 <!-- TABLE OF CONTENTS -->
@@ -32,13 +32,13 @@
 
 # 📖 Portfolio-v2 <a name="about-project"></a>
 
-**Portfolio-v2** is indeed a new version of my developer portfolio that I plan on creating with my new acquired knowledge as a frontend developer.
+**Portfolio-v2** is indeed a new version of my developer portfolio that I plan on updating with my newest acquired knowledge as a frontend developer.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Here is a list of the tech I plan on using during the development of this project.
+> Here is a list of the tech that I've used during the development of this project.
 
 <details>
   <summary>Client</summary>
@@ -48,13 +48,14 @@
     <li><p>ES6</p></li>
     <li><p>React</p></li>
     <li><p>Redux</p></li>
+    <li><p>Redux-Toolkit</p></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>Render (Maybe)</li>
+    <li>Netlify</li>
   </ul>
 </details>
 
@@ -64,7 +65,10 @@
 
 > Below is a list of the current key features of this project.
 
-- Home page that displays Vite + React.
+- Home page displays 6 of the best projects I've worked on.
+- About section that displays a short description of what I do, a button that leads to my resume and the techs I've worked with.
+- Contact section that displays a form to contact me and links to my social media accounts.
+- A connection to the firebase firestore to always be able to update the portfolio with my latest info.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,7 +116,7 @@ npm run dev
 
 ### Deployment
 
-You can deploy this project using: any hosting service such as render or netlify.
+You can deploy this project using: any hosting service of your choice such as [render](https://render.com/) or [netlify](https://www.netlify.com/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,8 +140,8 @@ You can deploy this project using: any hosting service such as render or netlify
 
 The following are the future features that will be added to the project.
 
-- [ ] **display a list of my most complex projects**
-- [ ] **Preserve data in the browser**
+- [ ] **Add accesibility features such as translation and visual cues**
+- [ ] **Apply a connection from my contact form to my email**
 - [ ] **It will probably not take over the world**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

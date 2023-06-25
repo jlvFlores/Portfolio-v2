@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Card from './Card';
-import Attributes from './Attributes';
 import SocialMedia from './SocialMedia';
+import Attributes from './Attributes';
+import Card from './Card';
 
 const Home = () => {
   const {
-    projects, resume, attributes, texts,
+    projects, resume, attributes, sectionText,
   } = useSelector((store) => store.portfolio);
 
   const findAnimations = () => {
@@ -26,6 +26,7 @@ const Home = () => {
   const createEventListeners = () => {
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', (event) => {
+      contactForm.submit();
       event.preventDefault();
       contactForm.reset();
     });
@@ -48,7 +49,7 @@ const Home = () => {
           <h1>
             I&apos;m a frontend developer and this is my portfolio
           </h1>
-          <p className="justify long-text">{texts.headline}</p>
+          <p className="justify long-text">{sectionText.headline}</p>
           <SocialMedia />
         </div>
       </section>
@@ -73,7 +74,7 @@ const Home = () => {
       <section id="about" className="divider-bottom">
         <div className="section-content animate">
           <h4 className="center">About me</h4>
-          <p className="justify long-text">{texts.about}</p>
+          <p className="justify long-text">{sectionText.about}</p>
           <a className="resume btn" href={resume.url} target="_blank" rel="noreferrer noopener">Check my Resume</a>
           <div id="attributes">
             {attributes.map((attribute) => (
@@ -89,14 +90,14 @@ const Home = () => {
       <section id="contact" className="divider-top">
         <div className="section-content animate">
           <h4 id="contact-title" className="center">Contact</h4>
-          <p className="center long-text">{texts.contact}</p>
-          <form id="contact-form">
+          <p className="center long-text">{sectionText.contact}</p>
+          <form id="contact-form" method="POST" action="https://formspree.io/f/mjvdkwqz">
             <div className="form-inputs">
-              <input type="text" placeholder="Name" required />
-              <input type="text" placeholder="Email" required />
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="email" name="email" placeholder="Email" required />
             </div>
-            <textarea cols="45" rows="10" placeholder="Let me know how I can help you." required />
-            <button className="btn reversed" type="submit">Get in touch</button>
+            <textarea name="message" cols="45" rows="10" maxLength="500" placeholder="Let me know how I can help you." required />
+            <button type="submit" className="btn reversed">Get in touch</button>
           </form>
           <div className="center">
             <SocialMedia />
