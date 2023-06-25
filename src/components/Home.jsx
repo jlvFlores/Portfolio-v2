@@ -5,7 +5,9 @@ import Attributes from './Attributes';
 import Card from './Card';
 
 const Home = () => {
-  const { projects, resume, attributes, texts } = useSelector((store) => store.portfolio);
+  const {
+    projects, resume, attributes, sectionText,
+  } = useSelector((store) => store.portfolio);
 
   const findAnimations = () => {
     const animateElements = document.querySelectorAll('.animate');
@@ -46,7 +48,7 @@ const Home = () => {
           <h1>
             I&apos;m a frontend developer and this is my portfolio
           </h1>
-          <p className="justify long-text">{texts.headline}</p>
+          <p className="justify long-text">{sectionText.headline}</p>
           <SocialMedia />
         </div>
       </section>
@@ -71,7 +73,7 @@ const Home = () => {
       <section id="about" className="divider-bottom">
         <div className="section-content animate">
           <h4 className="center">About me</h4>
-          <p className="justify long-text">{texts.about}</p>
+          <p className="justify long-text">{sectionText.about}</p>
           <a className="resume btn" href={resume.url} target="_blank" rel="noreferrer noopener">Check my Resume</a>
           <div id="attributes">
             {attributes.map((attribute) => (
@@ -87,7 +89,7 @@ const Home = () => {
       <section id="contact" className="divider-top">
         <div className="section-content animate">
           <h4 id="contact-title" className="center">Contact</h4>
-          <p className="center long-text">{texts.contact}</p>
+          <p className="center long-text">{sectionText.contact}</p>
           <form id="contact-form">
             <div className="form-inputs">
               <input type="text" placeholder="Name" required />

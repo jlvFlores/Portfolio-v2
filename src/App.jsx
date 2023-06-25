@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProjects } from './app/portfolio/portfolioSlice';
+import { fetchCollections } from './app/portfolio/portfolioSlice';
 import Header from './components/Header';
-// import Home from './components/Home';
+import Home from './components/Home';
 
 const App = () => {
   const { isLoading, error } = useSelector((store) => store.portfolio);
@@ -10,7 +10,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProjects());
+    dispatch(fetchCollections());
   }, [dispatch]);
 
   if (isLoading) {
@@ -18,14 +18,21 @@ const App = () => {
   }
 
   if (error) {
-    return <div>Error loading assets<br />Error: {error}</div>;
+    return (
+      <div>
+        Error loading assets
+        <br />
+        Error:
+        {error}
+      </div>
+    );
   }
 
   return (
     <>
       <Header />
-      {/* <Home /> */}
+      <Home />
     </>
   );
-}
+};
 export default App;
