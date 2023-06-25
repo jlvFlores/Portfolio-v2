@@ -26,6 +26,7 @@ const Home = () => {
   const createEventListeners = () => {
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', (event) => {
+      form.submit();
       event.preventDefault();
       contactForm.reset();
     });
@@ -90,13 +91,13 @@ const Home = () => {
         <div className="section-content animate">
           <h4 id="contact-title" className="center">Contact</h4>
           <p className="center long-text">{sectionText.contact}</p>
-          <form id="contact-form">
+          <form id="contact-form" method="POST" action="https://formspree.io/f/mjvdkwqz">
             <div className="form-inputs">
-              <input type="text" placeholder="Name" required />
-              <input type="text" placeholder="Email" required />
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="email" name="email" placeholder="Email" required />
             </div>
-            <textarea cols="45" rows="10" placeholder="Let me know how I can help you." required />
-            <button className="btn reversed" type="submit">Get in touch</button>
+            <textarea name="message" cols="45" rows="10" maxlength="500" placeholder="Let me know how I can help you." required />
+            <button type="submit" className="btn reversed">Get in touch</button>
           </form>
           <div className="center">
             <SocialMedia />
