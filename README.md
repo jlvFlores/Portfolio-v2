@@ -67,7 +67,7 @@
 
 - Home page displays 6 of the best projects I've worked on.
 - About section that displays a short description of what I do, a button that leads to my resume and the techs I've worked with.
-- Contact section that displays a form to contact me and links to my social media accounts.
+- Contact section that displays a form to contact me the creater and show links to my social media accounts.
 - A connection to the firebase firestore to always be able to update the portfolio with my latest info.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -116,7 +116,7 @@ npm run dev
 
 ### Deployment
 
-You can deploy this project using: any hosting service of your choice such as [render](https://render.com/) or [netlify](https://www.netlify.com/).
+You can deploy this project using: any hosting service of your choice such as [render](https://render.com/) or [netlify](https://www.netlify.com/). If you need a reference here is the [link to my porfolio](https://joselprortfolio.netlify.app/) that I deployed with netlify.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,7 +141,6 @@ You can deploy this project using: any hosting service of your choice such as [r
 The following are the future features that will be added to the project.
 
 - [ ] **Add accesibility features such as translation and visual cues**
-- [ ] **Apply a connection from my contact form to my email**
 - [ ] **It will probably not take over the world**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
