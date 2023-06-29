@@ -295,6 +295,10 @@ form {
   margin: auto;
 }
 
+.response-message {
+  color: var(--tertiary);
+}
+
 .form-inputs {
   display: flex;
   column-gap: 1rem;

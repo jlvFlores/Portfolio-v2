@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import SocialMedia from './SocialMedia';
 import Attributes from './Attributes';
 import Card from './Card';
+import ContactForm from './ContactForm';
 
 const Home = () => {
   const {
@@ -23,18 +24,8 @@ const Home = () => {
     animateElements.forEach((element) => observer.observe(element));
   };
 
-  const createEventListeners = () => {
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (event) => {
-      contactForm.submit();
-      event.preventDefault();
-      contactForm.reset();
-    });
-  };
-
   useEffect(() => {
     findAnimations();
-    createEventListeners();
   }, []);
 
   return (
@@ -87,23 +78,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section id="contact" className="divider-top">
-        <div className="section-content hidden-animation">
-          <h4 id="contact-title" className="center">Contact</h4>
-          <p className="center long-text">{sectionText.contact}</p>
-          <form id="contact-form" method="POST" action="https://formspree.io/f/mjvdkwqz">
-            <div className="form-inputs">
-              <input type="text" name="name" placeholder="Name" required />
-              <input type="email" name="email" placeholder="Email" required />
-            </div>
-            <textarea name="message" cols="45" rows="10" maxLength="500" placeholder="Let me know how I can help you." required />
-            <button type="submit" className="btn reversed">Get in touch</button>
-          </form>
-          <div className="center">
-            <SocialMedia />
-          </div>
-        </div>
-      </section>
+      <ContactForm />
     </main>
   );
 };
