@@ -5,12 +5,19 @@ const Card = ({
   id, title, techs, image, imageAltText, description, liveUrl, sourceUrl,
 }) => {
   const addDiaglogListener = () => {
-    const overlayTitle = document.getElementById(`overlay-title-${id}`);
-    overlayTitle.addEventListener('click', () => {
+    const overlay = document.getElementById(`overlay-${id}`);
+    overlay.addEventListener('click', () => {
       const dialog = document.getElementById(`dialog-${id}`);
       dialog.showModal();
     });
   };
+  const rendertags = () => (
+    <div className="tag-slide">
+      {techs.map((tech) => (
+        <span className="tag" key={tech}>{tech}</span>
+      ))}
+    </div>
+  );
 
   useEffect(() => {
     addDiaglogListener();
@@ -18,14 +25,13 @@ const Card = ({
 
   return (
     <article>
-      <div className="overlay">
+      <div id={`overlay-${id}`} className="overlay">
         <div className="overlay-content">
-          <ul>
-            {techs.map((tech) => (
-              <li className="tags" key={tech}>{tech}</li>
-            ))}
-          </ul>
-          <h3 id={`overlay-title-${id}`} className="title">{title}</h3>
+          <div className="tag-container">
+            {rendertags()}
+            {rendertags()}
+          </div>
+          <h3 className="title">{title}</h3>
         </div>
       </div>
       <img className="project-img" src={image} alt={imageAltText} />

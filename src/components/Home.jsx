@@ -10,13 +10,13 @@ const Home = () => {
   } = useSelector((store) => store.portfolio);
 
   const findAnimations = () => {
-    const animateElements = document.querySelectorAll('.animate');
+    const animateElements = document.querySelectorAll('.hidden-animation');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
+          entry.target.classList.add('loaded-animation');
         } else {
-          entry.target.classList.remove('animated');
+          entry.target.classList.remove('loaded-animation');
         }
       });
     });
@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <main>
       <section id="headline">
-        <div className="section-content animate">
+        <div className="section-content hidden-animation">
           <h4>
             Hey there.
             <br />
@@ -55,7 +55,7 @@ const Home = () => {
       </section>
       <section id="projects" className="divider-top">
         <h4 className="center">Projects</h4>
-        <div className="projects-showcase animate">
+        <div className="projects-showcase hidden-animation">
           {projects.map((project) => (
             <Card
               key={project.id}
@@ -72,7 +72,7 @@ const Home = () => {
         </div>
       </section>
       <section id="about" className="divider-bottom">
-        <div className="section-content animate">
+        <div className="section-content hidden-animation">
           <h4 className="center">About me</h4>
           <p className="justify long-text">{sectionText.about}</p>
           <a className="resume btn" href={resume.url} target="_blank" rel="noreferrer noopener">Check my Resume</a>
@@ -88,7 +88,7 @@ const Home = () => {
         </div>
       </section>
       <section id="contact" className="divider-top">
-        <div className="section-content animate">
+        <div className="section-content hidden-animation">
           <h4 id="contact-title" className="center">Contact</h4>
           <p className="center long-text">{sectionText.contact}</p>
           <form id="contact-form" method="POST" action="https://formspree.io/f/mjvdkwqz">
