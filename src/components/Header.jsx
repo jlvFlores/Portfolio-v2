@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <a className="logo" href="#headline">Portfolio</a>
+    <a className="logo" href="#">Portfolio</a>
     <nav>
       <a className="nav-option" href="#projects">Projects</a>
       <a className="nav-option" href="#about">About</a>

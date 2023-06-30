@@ -16,6 +16,10 @@
   color: var(--secondary);
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 section:nth-child(odd) {
   background-color: var(--secondary);
   color: var(--primary);
@@ -25,17 +29,10 @@ section:not(#projects) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 93vh;
 }
 
-#contact {
-  height: 102vh;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
+h1,
 h2,
 h3 {
   font-size: 2rem;
@@ -48,7 +45,7 @@ h3 {
 
 h4 {
   font-size: 4rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 h3,
@@ -474,5 +471,48 @@ textarea {
 
   .form-inputs {
     flex-direction: column;
+  }
+}
+
+
+@media only screen and (min-width: 1920px) {
+  span {
+    font-size: 1.5rem;
+  }
+
+  a,
+  input,
+  li,
+  p,
+  textarea,
+  .btn,
+  .long-text,
+  .project-buttons > a {
+    font-size: 2rem;
+  }
+  
+  h1,
+  h2,
+  h3,
+  .logo {
+    font-size: 3rem;
+  }
+  
+  h4 {
+    font-size: 6rem;
+  }
+
+  .rounded {
+    padding: .5rem 1.25rem;
+  }
+
+  .icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .icon-small {
+    width: 2rem;
+    height: 2rem;
   }
 }
