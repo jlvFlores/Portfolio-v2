@@ -41,7 +41,7 @@ const ContactForm = () => {
             <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
           </div>
-          <textarea name="message" cols="45" rows="10" maxLength="500" placeholder="Let me know how I can help you." value={formData.message} onChange={handleChange} required />
+          <textarea name="message" cols="45" rows="8" maxLength="500" placeholder="Let me know how I can help you." value={formData.message} onChange={handleChange} required />
           <button type="submit" className="btn reversed">Get in touch</button>
         </form>
         <div className="center">

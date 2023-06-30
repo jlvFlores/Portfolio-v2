@@ -124,7 +124,6 @@ nav {
 
 .link {
   font-weight: 700;
-  margin-right: 1rem;
   position: relative;
 }
 
@@ -268,9 +267,10 @@ dialog {
   left: 0;
 }
 
-.project-links .link {
+.project-links > .link {
   color: var(--secondary);
   font-weight: 400;
+  margin-right: 1rem;
 }
 
 /* ABOUT */
@@ -367,10 +367,27 @@ textarea {
 
 .center {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .justify {
   text-align: justify;
+}
+
+.media {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+  fill: none;
 }
 
 /* ANIMATIONS */
