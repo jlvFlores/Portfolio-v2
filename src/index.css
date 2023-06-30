@@ -69,6 +69,22 @@ a {
   overflow: hidden;
 }
 
+.section-content {
+  margin: 0 2rem;
+}
+
+.divider-top {
+  background-repeat: no-repeat;
+  background-image: url('./assets/layered-waves-haikei1.svg');
+  background-size: 150%;
+}
+
+.divider-bottom {
+  background-repeat: no-repeat;
+  background-image: url('./assets/layered-waves-haikei2.svg');
+  background-size: 550%;
+}
+
 /* NAVBAR */
 header {
   position: fixed;
