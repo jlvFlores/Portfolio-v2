@@ -12,24 +12,24 @@
   --secondary: #fff;
   --tertiary: #b87333;
 
-  background-color: var(--primary);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url('./assets/L_V_Flores_montaas_con_un_paisaje_lluvioso.png');
   color: var(--secondary);
 }
 
-body {
-  scroll-behavior: smooth;
+section:nth-child(even) {
+  background-color: var(--primary);
 }
 
 section:nth-child(odd) {
-  background-color: var(--secondary);
-  color: var(--primary);
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1));
 }
 
 section:not(#projects) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   min-height: 93vh;
+  padding: 2rem;
 }
 
 h1,
@@ -65,22 +65,6 @@ a {
   text-decoration: none;
 }
 
-.section-content {
-  margin: 0 2rem;
-}
-
-.divider-top {
-  background-repeat: no-repeat;
-  background-image: url('./assets/layered-waves-haikei1.svg');
-  background-size: 150%;
-}
-
-.divider-bottom {
-  background-repeat: no-repeat;
-  background-image: url('./assets/layered-waves-haikei2.svg');
-  background-size: 550%;
-}
-
 .no-scroll {
   overflow: hidden;
 }
@@ -100,6 +84,8 @@ header {
 }
 
 .logo {
+  background-color: transparent;
+  border: none;
   color: var(--tertiary);
   font-size: 2rem;
   font-weight: 700;
@@ -115,7 +101,10 @@ nav {
 }
 
 .nav-option {
+  background-color: transparent;
+  border: none;
   color: var(--secondary);
+  font-size: 1rem;
   position: relative;
 }
 
@@ -148,6 +137,13 @@ h3::after {
 h3:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+/* HEADLINE */
+#headline {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 /* PROJECTS */
@@ -274,6 +270,12 @@ dialog {
 }
 
 /* ABOUT */
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #attributes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -285,6 +287,10 @@ dialog {
   flex-direction: column;
   row-gap: 1rem;
   text-align: center;
+}
+
+.skills {
+  font-size: 1.5rem;
 }
 
 /* CONTACT */
@@ -426,6 +432,11 @@ textarea {
 }
 
 @media only screen and (max-width: 768px) {
+  :root {
+    background-size: cover;
+    background-position: center center;
+  }
+
   .logo {
     font-size: 1rem;
     margin: 0;
@@ -474,7 +485,6 @@ textarea {
   }
 }
 
-
 @media only screen and (min-width: 1920px) {
   span {
     font-size: 1.5rem;
@@ -486,24 +496,26 @@ textarea {
   p,
   textarea,
   .btn,
+  .skills,
   .long-text,
+  .nav-option,
   .project-buttons > a {
     font-size: 2rem;
   }
-  
+
   h1,
   h2,
   h3,
   .logo {
     font-size: 3rem;
   }
-  
+
   h4 {
     font-size: 6rem;
   }
 
   .rounded {
-    padding: .5rem 1.25rem;
+    padding: 0.5rem 1.25rem;
   }
 
   .icon {
@@ -514,5 +526,10 @@ textarea {
   .icon-small {
     width: 2rem;
     height: 2rem;
+  }
+
+  .resume {
+    padding: 1rem;
+    font-weight: 600;
   }
 }

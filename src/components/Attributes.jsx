@@ -5,7 +5,7 @@ const Attributes = ({ category, items }) => (
   <div className="attribute center">
     <h3>{category}</h3>
     {items.map((item) => (
-      <h2 key={item}>{item}</h2>
+      <h2 className="skills" key={item}>{item}</h2>
     ))}
   </div>
 );

@@ -37,14 +37,12 @@ const Home = () => {
             <br />
             I&apos;m Jose Luis
           </h4>
-          <h1>
-            I&apos;m a frontend developer and this is my portfolio
-          </h1>
+          <h1>I am a frontend developer and this is my portfolio</h1>
           <p className="justify long-text">{sectionText.headline}</p>
           <SocialMedia />
         </div>
       </section>
-      <section id="projects" className="divider-top">
+      <section id="projects">
         <h4 className="center">Projects</h4>
         <div className="projects-showcase hidden-animation">
           {projects.map((project) => (
@@ -62,11 +60,11 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section id="about" className="divider-bottom">
+      <section id="about">
         <div className="section-content hidden-animation">
           <h4 className="center">About me</h4>
           <p className="justify long-text">{sectionText.about}</p>
-          <a className="resume btn" href={resume.url} target="_blank" rel="noreferrer noopener">Check my Resume</a>
+          <a className="resume btn reversed" href={resume.url} target="_blank" rel="noreferrer noopener">Check my resume</a>
           <div id="attributes">
             {attributes.map((attribute) => (
               <Attributes
