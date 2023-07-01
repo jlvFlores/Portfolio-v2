@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 
 const Loading = ({ updateHasAnimated }) => {
   const hasAnimated = () => {
@@ -6,13 +7,12 @@ const Loading = ({ updateHasAnimated }) => {
   };
 
   useEffect(() => {
-    const welcomeText = document.querySelector(".welcome-text");
-    welcomeText.classList.add("welcome-animation");
-    welcomeText.addEventListener("animationend", hasAnimated);
+    const welcomeText = document.querySelector('.welcome-text');
+    welcomeText.classList.add('welcome-animation');
+    welcomeText.addEventListener('animationend', hasAnimated);
 
     return () => {
-      // Clean up the event listener when component unmounts
-      welcomeText.removeEventListener("animationend", hasAnimated);
+      welcomeText.removeEventListener('animationend', hasAnimated);
     };
   }, []);
 
@@ -25,6 +25,10 @@ const Loading = ({ updateHasAnimated }) => {
       </div>
     </div>
   );
-}
+};
+
+Loading.propTypes = {
+  updateHasAnimated: PropTypes.instanceOf(Function).isRequired,
+};
 
 export default Loading;

@@ -8,13 +8,13 @@ const Header = () => {
   };
   return (
     <header>
-      <button className="logo" onClick={() => handleButtonClick('headline')}>Portfolio</button>
+      <button type="button" className="logo" onClick={() => handleButtonClick('headline')}>Portfolio</button>
       <nav>
-        <button className="nav-option" onClick={() => handleButtonClick('projects')}>Projects</button>
-        <button className="nav-option" onClick={() => handleButtonClick('about')}>About</button>
-        <button className="nav-option" onClick={() => handleButtonClick('contact-title')}>Contact</button>
+        <button type="button" className="nav-option" onClick={() => handleButtonClick('projects')}>Projects</button>
+        <button type="button" className="nav-option" onClick={() => handleButtonClick('about')}>About</button>
+        <button type="button" className="nav-option" onClick={() => handleButtonClick('contact-title')}>Contact</button>
       </nav>
     </header>
   );
-}
+};
 export default Header;

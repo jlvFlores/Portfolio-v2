@@ -3,9 +3,9 @@ section:nth-child(even) {
 }
 
 section:nth-child(odd) {
-  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1));
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
 }
-  
+
 section:not(#projects) {
   min-height: 93vh;
   padding: 2rem;

@@ -8,7 +8,7 @@ import Home from './components/Home';
 const App = () => {
   const dispatch = useDispatch();
   const { isLoading, error } = useSelector((store) => store.portfolio);
-  const [ hasAnimated, setHasAnimated ] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCollections());
