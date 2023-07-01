@@ -65,6 +65,7 @@
 
 > Below is a list of the current key features of this project.
 
+- A loading page of which I am proud of.
 - Home page displays 6 of the best projects I've worked on.
 - About section that displays a short description of what I do, a button that leads to my resume and the techs I've worked with.
 - Contact section that displays a form to contact me the creater and show links to my social media accounts.
@@ -167,9 +168,9 @@ If you like this project you can give me a hand by recommending me to potential 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Credit is given to those who deserve it.
+> I would like to thank those who have motivated me to keep on fighting despite how tough the journey may become
 
-I would like to thank those who have motivated me to keep on fighting despite how tough the journey may become.
+I would also like to thank Victor who revised my portfolio and gave me some pointers on how to improve it.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
