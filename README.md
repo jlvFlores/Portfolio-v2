@@ -32,7 +32,7 @@
 
 # 📖 Portfolio-v2 <a name="about-project"></a>
 
-**Portfolio-v2** is indeed a new version of my developer portfolio that I plan on updating with my newest acquired knowledge as a frontend developer.
+**Portfolio-v2** is indeed a new version of my developer portfolio that I plan on updating with my newest acquired knowledge as a full-stack developer. The project is created with React and Redux, and it communicates with Firebase's Firestore through the use of APIs to retrieve and display the details of my previous projects, attributes, current resume, and the text in the paragraphs to allow for more customization of the website.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -68,7 +68,7 @@
 - A loading page of which I am proud of.
 - Home page displays 6 of the best projects I've worked on.
 - About section that displays a short description of what I do, a button that leads to my resume and the techs I've worked with.
-- Contact section that displays a form to contact me the creater and show links to my social media accounts.
+- Contact section that displays a form to contact me and show links to my social media accounts.
 - A connection to the firebase firestore to always be able to update the portfolio with my latest info.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -142,6 +142,7 @@ You can deploy this project using: any hosting service of your choice such as [r
 The following are the future features that will be added to the project.
 
 - [ ] **Add accesibility features such as translation and visual cues**
+- [ ] **Allow the resume to be downloadable**
 - [ ] **It will probably not take over the world**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
