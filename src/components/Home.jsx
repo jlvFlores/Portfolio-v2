@@ -37,7 +37,7 @@ const Home = () => {
             <br />
             I&apos;m Jose Luis
           </h4>
-          <h1>I am a frontend developer and this is my portfolio</h1>
+          <h1>I am a full-stack developer and this is my portfolio</h1>
           <p className="justify long-text">{sectionText.headline}</p>
           <SocialMedia />
         </div>
