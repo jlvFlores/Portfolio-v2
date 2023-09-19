@@ -1,12 +1,12 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postRequest } from '../app/form/formSlice';
 import SocialMedia from './SocialMedia';
 
-const ContactForm = () => {
+const ContactForm = ({ sectionText }) => {
   const dispatch = useDispatch();
   const { hasBeenSent, isLoading, error } = useSelector((store) => store.form);
-  const { sectionText } = useSelector((store) => store.portfolio);
   let response = '';
   const [formData, setFormData] = useState({
     name: '',
@@ -36,7 +36,7 @@ const ContactForm = () => {
     <section id="contact">
       <div className="section-content hidden-animation">
         <h4 id="contact-title" className="center">Contact</h4>
-        <p className="center long-text">{sectionText.contact}</p>
+        <p className="center long-text">{sectionText}</p>
         <p className="response-message">{response}</p>
         <form id="contact-form" onSubmit={handleSubmit}>
           <div className="form-inputs">
@@ -52,6 +52,10 @@ const ContactForm = () => {
       </div>
     </section>
   );
+};
+
+ContactForm.propTypes = {
+  sectionText: PropTypes.string.isRequired,
 };
 
 export default ContactForm;
