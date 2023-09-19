@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SocialMedia = () => (
   <div className="media">
     <a className="link" href="https://github.com/jlvFlores" target="_blank" rel="noreferrer noopener">
