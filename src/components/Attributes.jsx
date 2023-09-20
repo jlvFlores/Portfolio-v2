@@ -1,8 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 const Attributes = ({ category, items }) => (
-  <div className="attribute center">
+  <div className="attribute">
     <h3>{category}</h3>
     {items.map((item) => (
       <h2 className="skills" key={item}>{item}</h2>
