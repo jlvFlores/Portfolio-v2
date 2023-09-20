@@ -1,3 +1,8 @@
+section {
+  padding: 2rem;
+  min-height: 93vh;
+}
+
 section:nth-child(even) {
   background-color: var(--primary);
 }
@@ -6,9 +11,8 @@ section:nth-child(odd) {
   background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
 }
 
-section:not(#projects) {
-  min-height: 93vh;
-  padding: 2rem;
+section:last-child {
+  padding-bottom: 0;
 }
 
 h1 {
@@ -28,7 +32,6 @@ h3 {
 
 h4 {
   font-size: 4rem;
-  padding-top: 3rem;
 }
 
 h3,
@@ -180,7 +183,7 @@ h3:hover::after {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 2rem;
-  padding: 2rem;
+  padding-top: 1rem;
 }
 
 article {
@@ -300,10 +303,20 @@ dialog {
   justify-content: center;
 }
 
-#attributes {
+.about {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.resume-cont {
+  margin: 2rem 0 1rem;
+}
+
+#attributes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 2rem 1rem;
 }
 
 .attribute {
@@ -392,7 +405,7 @@ textarea {
 
 .long-text {
   font-size: 1.25rem;
-  margin: 1rem 0 2rem;
+  margin-bottom: 1rem;
 }
 
 .center {
@@ -587,6 +600,12 @@ textarea {
   .dialog-img {
     max-height: 50vh;
     object-fit: scale-down;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .resume {
