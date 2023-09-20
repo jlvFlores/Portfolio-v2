@@ -16,7 +16,7 @@
   background-position: center, center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: url('./assets/L_V_Flores_montaas_con_un_paisaje_lluvioso.png');
+  background-image: url('./assets/L_V_Flores_montanas_con_un_paisaje_lluvioso.webp');
   color: var(--secondary);
 }
 
@@ -56,7 +56,7 @@
 .welcome-animation {
   opacity: 1;
   animation:
-    typing 3.5s steps(26),
+    typing 2s steps(26),
     blink-caret 0.5s step-end infinite;
 }
 
