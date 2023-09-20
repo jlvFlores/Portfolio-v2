@@ -14,10 +14,10 @@ const About = ({ sectionText }) => {
     <section id="about">
       <div className="section-content hidden-animation">
         <h4 className="center">About me</h4>
-        <div className='about'>
-          <div id='about-text'>
+        <div className="about">
+          <div id="about-text">
             {paragraphs}
-            <div className='resume-cont'>
+            <div className="resume-cont">
               <a className="resume btn reversed" href={resume.url} target="_blank" rel="noreferrer noopener">Check my resume</a>
             </div>
           </div>
