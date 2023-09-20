@@ -18,13 +18,15 @@ export const fetchCollections = createAsyncThunk('portfolio/fetchCollections', a
   try {
     const collections = [];
 
-    const projectsSnapshot = await getDocs(collection(db, 'projects'));
     const attributesSnapshot = await getDocs(collection(db, 'attributes'));
+    const imagesSnapshot = await getDocs(collection(db, 'images'));
+    const projectsSnapshot = await getDocs(collection(db, 'projects'));
     const resumeSnapshot = await getDocs(collection(db, 'resume'));
     const sectionTextSnapshot = await getDocs(collection(db, 'sectionText'));
 
     collections.push({
       attributes: attributesSnapshot.docs.map((doc) => doc.data()),
+      images: imagesSnapshot.docs.map((doc) => doc.data())[0],
       projects: projectsSnapshot.docs.map((doc) => doc.data()),
       resume: resumeSnapshot.docs.map((doc) => doc.data())[0],
       sectionText: sectionTextSnapshot.docs.map((doc) => doc.data())[0],
@@ -38,6 +40,7 @@ export const fetchCollections = createAsyncThunk('portfolio/fetchCollections', a
 
 const initialState = {
   attributes: [],
+  images: [],
   projects: [],
   resume: [],
   sectionText: [],
@@ -56,11 +59,12 @@ const portfolioSlice = createSlice({
       }))
       .addCase(fetchCollections.fulfilled, (state, action) => {
         const {
-          attributes, projects, resume, sectionText,
+          attributes, images, projects, resume, sectionText,
         } = action.payload[0];
         return ({
           ...state,
           attributes,
+          images,
           projects,
           resume,
           sectionText,

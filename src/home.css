@@ -11,7 +11,11 @@ section:not(#projects) {
   padding: 2rem;
 }
 
-h1,
+h1 {
+  color: var(--tertiary);
+  font-size: 4rem;
+}
+
 h2,
 h3 {
   font-size: 2rem;
@@ -31,6 +35,32 @@ h3,
 h4,
 .link {
   color: var(--tertiary);
+}
+
+.headline {
+  padding-top: 10rem;
+}
+
+.profile-img-cont {
+  border-radius: 100%;
+  display: grid;
+  overflow: hidden;
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
+.profile-img-cont > * {
+  grid-column: 1 /-1;
+  grid-row: 1 /-1;
+}
+
+.profile-img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
+  animation: appear 3s ease-in-out;
 }
 
 ul {
@@ -137,8 +167,7 @@ h3:hover::after {
 /* HEADLINE */
 #headline {
   display: flex;
-  justify-content: start;
-  align-items: center;
+  flex-direction: column;
 }
 
 /* PROJECTS */
@@ -397,6 +426,10 @@ textarea {
   fill: currentColor;
 }
 
+.w-65 {
+  width: 65%;
+}
+
 /* ANIMATIONS */
 .hidden-animation {
   opacity: 0;
@@ -409,6 +442,45 @@ textarea {
   transform: translateY(0);
 }
 
+.leaves {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: 30%;
+  bottom: -55%;
+}
+
+.leaf {
+  animation: blink 4s infinite;
+  max-height: 80px;
+}
+
+.leaf:nth-child(1) {
+  animation-delay: 1s;
+  margin: -20px 0;
+  height: 50px;
+}
+
+.leaf:nth-child(2) {
+  animation-delay: 0.75s;
+  height: 35px;
+}
+
+.leaf:nth-child(3) {
+  animation-delay: 0.5s;
+  height: 50px;
+  margin: -20px 0;
+}
+
+.leaf:nth-child(4) {
+  animation-delay: 0.25s;
+  height: 60px;
+}
+
+.leaf:nth-child(5) {
+  margin: -20px 0;
+}
+
 @keyframes slide {
   from {
     transform: translateX(0%);
@@ -416,6 +488,30 @@ textarea {
 
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -435,6 +531,42 @@ textarea {
   .logo {
     font-size: 1rem;
     margin: 0;
+  }
+
+  section:not(#projects) {
+    padding: 2rem 0;
+  }
+
+  #greet-text {
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .media {
+    justify-content: center;
+  }
+
+  #headline {
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .headline {
+    padding-top: 2rem;
+  }
+
+  .profile-img-cont {
+    position: relative;
+    width: 100%;
+  }
+
+  .w-65 {
+    width: 100%;
   }
 
   .projects-showcase {

@@ -4,9 +4,12 @@ import SocialMedia from './SocialMedia';
 import Projects from './Projects';
 import About from './About';
 import ContactForm from './ContactForm';
+import LeavesHead from '../assets/leaves_head.svg';
+import LeavesCenter from '../assets/leaves_center.svg';
+import LeavesBottom from '../assets/leaves_bottom.svg';
 
 const Home = () => {
-  const { sectionText } = useSelector((store) => store.portfolio);
+  const { images, sectionText } = useSelector((store) => store.portfolio);
 
   const findAnimations = () => {
     const animateElements = document.querySelectorAll('.hidden-animation');
@@ -29,14 +32,22 @@ const Home = () => {
   return (
     <main>
       <section id="headline">
-        <div className="section-content hidden-animation">
-          <h4>
-            Hey there.
-            <br />
-            I&apos;m Jose Luis
-          </h4>
-          <h1>I am a full-stack developer and this is my portfolio</h1>
-          <p className="justify long-text">{sectionText.headline}</p>
+        <div className="section-content hidden-animation headline">
+          <h2 id="greet-text">Hey there, I&apos;m Jose Luis</h2>
+          <div className="profile-img-cont">
+            <div className="leaves">
+              <img className="leaf" src={LeavesHead} alt="animated leave icon one" />
+              <img className="leaf" src={LeavesCenter} alt="animated leave icon two" />
+              <img className="leaf" src={LeavesCenter} alt="animated leave icon three" />
+              <img className="leaf" src={LeavesCenter} alt="animated leave icon four" />
+              <img className="leaf" src={LeavesBottom} alt="animated leave icon five" />
+            </div>
+            <img className="profile-img" src={images.profile} alt="portfolio creator" />
+          </div>
+          <h1>
+            FULL-STACK DEVELOPER
+          </h1>
+          <p className="justify long-text w-65">{sectionText.headline}</p>
           <SocialMedia />
         </div>
       </section>
